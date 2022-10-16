@@ -1,0 +1,117 @@
+<div class="container m-auto justify-content-center  text-center"  >
+    <form [formGroup]="registerform" class=" font-weight-bold text-left  mt-5  p-5  w-50 container " style="background-color: rgb(223, 226, 230); " (ngSubmit)="submitregisterform()"   >
+
+
+        
+     
+        
+
+              <div class="form-group m-auto  ">
+
+                <label for="entered_email" class="mr-2"> Email</label>
+            
+                <input type="email" id="entered_email" formControlName="register_email" class="w-100 mb-3" 
+                      >
+        </div>
+
+        <div *ngIf="registerFormControl.register_email.touched && !registerFormControl.register_email.valid && registerFormControl.register_email.errors.required">
+            <p class="alert alert-danger">
+                enter your email !  " this field is required"  
+            </p>
+
+
+
+        </div>
+
+
+        <div *ngIf="registerFormControl.register_email.errors?.pattern">
+            <p class="alert alert-danger">
+                this email not valid !
+            </p>
+
+
+
+        </div>
+
+       
+
+    
+
+          
+     
+
+    <div class="form-group m-auto  ">
+
+      <label for="entered_username" class="mr-2">User Name</label>
+  
+      <input type="text" id="entered_username" formControlName="register_username" class="w-100 mb-3 " 
+            >
+</div>
+
+<div *ngIf="registerFormControl.register_username.touched && !registerFormControl.register_username.valid && registerFormControl.register_username.errors.required">
+    <p class="alert alert-danger">
+        enter your user name !  " this field is required"  
+    </p>
+</div>
+
+<div *ngIf="registerFormControl.register_username.errors?.pattern">
+    <p class="alert alert-danger">
+        this user name not valid !
+    </p>
+
+
+
+</div>
+
+
+
+
+<div class="form-group m-auto  ">
+
+    <label for="entered_password" class="mr-2">Password</label>
+
+    <input type="number" id="entered_password" formControlName="register_password" class="w-100 mb-3 " 
+          >
+</div>
+
+<div *ngIf="registerFormControl.register_password.touched && !registerFormControl.register_password.valid && registerFormControl.register_password.errors.required">
+    <p class="alert alert-danger">
+        enter your password !  " this field is required"  
+    </p>
+</div>
+
+<div *ngIf="registerFormControl.register_password.errors?.pattern">
+    <p class="alert alert-danger">
+        this password name not valid !
+    </p>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    
+       <button class="btn btn-primary mt-3"  [disabled]="registerform.invalid"  
+        
+       >Register</button>
+    
+    </form>
+    </div>
+
+
+
+    <!-- <div class="container d-flex my-5 text-center justify-content-center"> -->
+        <!-- <h5 class="ml-5 font-weight-bold" >Already have Account ?</h5> -->
+        <!-- <a class="ml-4  font-weight-bold "   routerLink="/login"  style="font-size: 18px;">register</a> -->
+        <!-- </div> -->
+    
+       
